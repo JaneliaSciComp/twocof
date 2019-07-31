@@ -1,0 +1,527 @@
+
+change log for the twocof project
+
+v2.0 (July 31, 2019)
+* moved from internal subversion repository to GitHub
+* open sourced; added Janelia license
+
+
+v1.7.4.x (sometime between 2016 and 2018)
+* updated scripts to run on LSF cluster instead of SGE
+* added tracker t159
+
+
+v1.7.4 (November 10, 2016)
+* TWOCOF-77: added t16, redefined t8
+
+
+v1.7.3 (October 11, 2016)
+* TWOCOF-76: move Zlatic pipeline back to dm11 from tier2
+
+
+v1.7.2 (May 31, 2016)
+* TWOCOF-73: adjust qsub command for new short queue
+
+
+v1.7.1 (September 17, 2015)
+* TWOCOF-72: added tracker t111, same as t1
+
+
+v1.7 (August 6, 2015)
+* TWOCOF-71: reprocess when data is removed as well as added
+
+
+v1.6.10 (June 11, 2015)
+* added tracker t150, same as t15
+
+
+v1.6.9 (June 3, 2015)
+* added tracker t14, same as t15
+* constants updated for move to tier2 (actually sometime in 2014, new release not cut at that point)
+
+
+v1.6.8 (November 18, 2013)
+* added tracker t15, identical to t6
+
+
+v1.6.7 (May 3, 2013)
+* t5: speed --> speed085 in plots, analysis
+
+
+v1.6.6 (January 18, 2013)
+* fixed bug in t11 constants
+
+
+v1.6.5 (January 17, 2013)
+* TWOCOF-60: update variables for t1, t5
+* TWOCOF-61: add support for t7-t11
+
+
+v1.6.4 (January 9, 2013)
+* TWOCOF-59: add code for t12
+
+
+v1.6.3 (January 2, 2013)
+* TWOCOF-58: added 'b' to t3 tracker
+
+
+v1.6.2 (September 25, 2012)
+* TWOCOF-56: added support for tracker t1; now has new variables
+** side effect: don't use t1 as a base for t2-t6!
+
+
+v1.6.1 (May 8, 2012)
+* tasks and variables are now tracker-dependent
+* tentative t8 constants added
+* TWOCOF-55: notification fix when month dir doesn't exist
+
+
+v1.6 (March 9, 2012) 
+* enabled easy change of plot format
+* plots now saved in SVG format
+* variable name changes:
+** -norm --> norm (no hyphen)
+** -norm-perrun --> normperrun (no hyphen)
+** abs_cast --> abscast
+
+
+v1.5.8 (February 21, 2012)
+* added Python script to do biweekly timing (TWOCOF-49)
+
+
+v1.5.7 (February 13, 2012) 
+* new derived scalar abscast
+* sum squares and squared sum now nonzero in plot data files (TWOCOF-45)
+* delete empty log dirs if no jobs run (TWOCOF-30)
+
+
+v1.5.6 (January 12, 2012)
+* disabled -ave-binned.png plots (TWOCOF-47)
+* script to send email notification (via Hudson) when jobs have finished
+
+
+v1.5.5 (December 14, 2011)
+* fixed bug: process0cluster.py args to process1 not correctly formatted
+
+
+v1.5.4 (December 7, 2011)
+* reworked process0cluster.py so it will work when run from Hudson;
+    mostly involved removing relative paths of all kinds
+
+
+v1.5.3 (December 7, 2011)
+* fixed TWOCOF-41
+* added --charge and qsub account; this enables Marta's
+    lab to be charged for my processing
+
+
+v1.5.2 (November 3, 2011)
+* added onset + 0.25 to onset + 0.75 interval
+* moved all t#-don-test trackers to my home dir
+* fixed TWOCOF-31
+
+
+v1.5.1 (October 20, 2011) 
+* if no processing jobs submitted, don't submit summary
+    or aggregation script, either (in preparation for when
+    we run things automatically instead of manually)
+* improved "no data" messages and reporting
+* report versions in --verbose mode in process1.py
+
+
+v1.5 (October 5, 2011)
+* allowed different file system locations for each tracker
+* supports gzipping of choreography output
+* added --keep-derived flag for process1.py
+* fixed TWOCOF-39 (the normalization issue)
+
+
+v1.4.9 (September 14, 2011)
+* added --nosubmit option for process0cluster.py for testing
+* log number of reserved slots on cluster
+* only datasets with more than 5 datestamp folders are run with
+    8 cluster slots; all others run with 1
+* fixed TWOCOF-33 (delete font cache when submitting jobs)
+
+
+v1.4.8 (September 6, 2011)
+* added crabspeed to agg-stats list
+* added 3 more stimuli to t6
+
+
+v1.4.7 (July 28, 2011)
+* array of bug fixes
+
+
+v1.4.6 (July 13, 2011)
+* removed some unused, obsolete scripts
+* --overwrite defaults to true; added --nooverwrite if you
+    don't want to overwrite
+* by default, only experiments with new data are processed;
+    --all to override
+
+
+v1.4.5 (June 15, 2011)
+* turned off a large number of variables and output classes
+
+
+v1.4.2 (June 15, 2011)
+* fixed bug: TWOCOF-27 (process scripts looking at comb-res instead
+    of chore-res)
+
+
+v1.4.1 (June 15, 2011)
+* fixed bug: TWOCOF-26 (more KeyErrors)
+
+
+v1.4 (June 8, 2011)
+* .r file data are now read from uncombined choreography output
+* continued to fix KeyErrors (date stamps) (follow-up on TWOCOF-24) 
+* delete derived .r files after we're done
+* fixed bug: TWOCOF-25 (errors due to missing .dat files in some 
+    but not all date stamp folders)
+
+
+v1.3.2 (May 23, 2011)
+* fixed bug: TWOCOF-24
+* re-fixed TWOCOF-23 (was a typo in previous fix)
+
+
+v1.3.1 (May 9, 2011)
+* added per-run plot for ave-err
+* added overall time span to examinesummary.py
+* fixed bug: TWOCOF-23
+
+
+v1.3 (April 20, 2011)
+* added verbose mode
+* major refactoring: no longer rectangularize internal data of either
+    trackdata or spinedata objects; should result significant memory savings
+* added job ID, host to process1 output when on cluster
+* added plot comparison script
+
+
+v1.2.3 (March 23, 2011)
+* summary now lists jobs that failed without any output whatsoever,
+    or with output that couldn't be parsed correctly
+* fixed bug: was improperly deleting files even if overwrite flag
+    was *not* on
+* "branch" now set in trackdata.filenamedata
+
+
+v1.2.2 (March 14, 2011)
+* fixed bug: intervals crashing for pulsed stim
+* fixed bug: hist filenames failing for derived scalars if derived
+    files don't exist yet
+
+
+v1.2.1 (March 11, 2011)
+* implemented "uniform rules" scheme for time intervals and enabled
+    for stats/plots (TWOCOF-15)
+* changed logging (TWOCOF-12):
+** logs now in pipeline/branch/logs/year/month/date
+** updated logs (and job names) to show branch as well as tracker
+** adjusted some log lines for easier parsing later
+* added option to run jobs in the short queue (for testing only)
+* updated to new combiner folder name
+* adjusted interpretation of stimulus.interval; can now quickly switch
+    between the two interpretations we've used
+* use short queue for aggregation and summary jobs 
+* with --overwrite, delete whole directories so old "obsolete" files
+    get cleaned up as well (TWOCOF-19)
+
+
+v1.2.0 (February 18, 2011)
+* adjusted pipeline to handle multiple branches (eg, rd and screen)
+* updated method for detecting cluster nodes (TWOCOF-14)
+* added placeholders to plot data output for squared sum and sum of squares
+
+
+v1.1.0 (February 11, 2011)
+* removed some duplicate time intervals
+* fixed bug: correctly handle histogram table output when there is no data
+* changed histogram filename format (TWOCOF-3)
+* process1.py can list output files (TWOCOF-5)
+* fixed bug: better handling of some histogram internals (TWOCOF-8)
+
+
+v1.0.9 (January 27, 2011)
+* added tabular data output for: ave-err and ave-binned-perobj
+    plots, and for histograms
+* fixed bug: some plots could fail for scratch-only stimulus
+
+
+v1.0.8 (January 10, 2011)
+* added another level in directory hierarchy for aggregated stats
+* refactored: all report functions into task classes
+* refactored: all plot functions into new file
+* refactored: adjuststim, rectangularize, all check/getinterval 
+    stuff moved to util file
+* added total datasets to cluster summary
+* fixed bug: aggregated stats directories have right permissions
+
+
+v1.0.7 (November 17, 2010)
+* fixed bug: trapped some more NaNs
+* changed some errors to warnings; adjusted summary files
+    to report warnings, too
+* added script to aggregate stats per tracker;
+    added to pipelines (cluster and single-machine)
+* summary jobs only hold for their own tracker jobs
+
+
+v1.0.6 (November 12, 2010)
+* bumped slots per node to 8
+* added caching scheme "none"; enabled it
+* removed all caching within the tasks
+
+
+v1.0.5 (November 5, 2010)
+* added maximum time to process0summarize.py output
+* pruned output of process0cluster.py (removed submission info)
+* pruned output of process1.py (removed written files list)
+* added a huge number of absolute time windows
+* added "branch" option for util.walktracker
+* added new "combo" plot task
+* bumped slots per node to 4
+
+
+v1.0.4 (October 19, 2010)
+* cluster jobs can now run at fewer jobs/node, to improve
+    memory availability
+* misc small bug fixes
+
+
+v1.0.3 (October 7, 2010)
+* (version numbers mean nothing; I jumped from 0.9.9 to 1.0.3
+    to emphasize that (since this release is not worthy of 
+    a "1.0" designation))
+* added a bunch more kinks
+* fixed bug: some (many!) kink angles were incorrectly coming out
+    "NaN" due to improper NaN exclusion
+* added sum sqrs to x/y motion output
+
+
+v0.9.9 (September 24, 2010)
+* started recording "ignored" stimuli in filename data
+* fixed bug: if .spine has more sources than other .r files,
+    ignore them when calculating kinks
+* switched kink calculations to absolute angle
+* enabled full list of kinks
+* switched .angle output to absolute value
+* what was "deltax/y" is now "abs_vel_x/y"; it's enabled again, 
+    and it's now an absolute value
+* accel_x/y is now absolute value, called abs_accel_x/y
+* added windows to y-motion analysis; added windows when
+    ignored stimuli 's' is present
+* added x-motion analysis
+
+
+v0.9.8 (September 16, 2010)
+* create process1output folder if it doesn't exist
+* fixed bug: binned ave doesn't choke with >1 prestim value
+* fixed bugs in kink calculations (tests ok now):
+** was comparing mags instead of abs mags
+** off by one on nodes in complement calculation
+* enabled, but still only two test kinks
+* histograms:
+** now normalized
+** scalar range now limited to usual scalar plot range
+* fixed bug: files and directories all written group-writable
+* improved some error messages
+
+
+v0.9.7 (August 31, 2010)
+* added y-motion analysis for Tihana
+
+
+v0.9.6 (August 19, 2010)
+* added more scalars to "normalize" list
+* enabled individual scaling to normalized scalars (ie, not
+    all -norm scalars have same default scale now)
+* added second window for histograms
+
+
+v0.9.5 (August 5, 2010)
+* added statistics on min/max values per track, averaged over tracks,
+    in given time windows
+* added derived data: dx/dt, dy/dt; currently disabled
+* added binned-ave plot with perobj stats
+* added normalized variables (needs tweaking); only "midline" to start
+* added histograms (needs tweaking)
+* added limit for aspect ratio in plots (prevents some absurdly
+    tall plots)
+* added accleration derived data
+* added sum(x) ** 2 to per-object stats
+* temporarily disabled stimulus marking on plots 
+
+
+v0.9.1 (July 19, 2010)
+* fixed division by zero bug in perobject stats 1/(N-1) calcs
+* re-enabled tables
+
+
+v0.9 (July 16, 2010)
+* plots, except for the "all data" scatter plot, are now generated at
+    a constant resolution per scalar
+* per-object statistics added
+* plot appearance updated
+
+
+v0.8.9 (July 7, 2010)
+* added t5 stimulus to column mapping
+* angle output in degrees instead of radians
+
+
+v0.8.8 (June 14, 2010)
+* drop a problematic interval when stimulus duration is short
+* disabled tabular output until I can get the file names worked out
+
+
+v0.8.7 (June 10, 2010)
+* if stimulus exceeds total running time, intervals are truncated
+* -binned-ave doesn't depend on stim data in file anymore (filename only)
+* kink calcs in but not yet enabled (not fully tested yet)
+
+
+v0.8.6b (June 3, 2010)
+* fixed bug: NaN's correctly written in derived .r files
+* derived .r file generation tasks tell process1 what their output scalars are
+
+
+v0.8.6a (June 3, 2010)
+* fixed bug: process0cluster.py was not respecting the --overwrite flag
+
+
+v0.8.6 (June 3, 2010)
+* derived .r files relying on correlation between multiple input
+    .r files now do correlation by source name 
+* derived .r files now written in new format
+
+
+v0.8.5 (May 26, 2010)
+* fixed bugs in intervals with onset < ignore time
+* added guard against calculating averages with count == 0
+    (will now return NaN)
+
+
+v0.8.4.1 (May 26, 2010) 
+* allowed stimulus onset time to be less than ignore time
+
+
+v0.8.4 (May 19, 2010)
+* fixed bugs in angle calculations
+* enabled angle calculations
+* added column mapping for t4
+
+
+v0.8.3 (May 12, 2010)
+* removed xy_bias as it was determined to be redundant with vel_xy_bias
+* added support for sequentially concatenated .dat files
+* added info for tracker 6
+* added ability to force the use of a constant dt for resampling data 
+    and enabled it
+* added consistency check for stimulus onsets between filename and data, 
+    but left it disabled; Marta would prefer the imperfect results over 
+    no processing of anything with errors
+
+
+v0.8.2 (April 21, 2010)
+* added 't' for temperature stimulus
+* added xy_bias generation
+* multiple stimulus for stats, plots
+
+
+v0.8.1a (April 14, 2010)
+* bug fix: cluster jobs now use right script paths
+
+
+v0.8.1 (April 14, 2010)
+* small improvements to cluster summary output
+* cluster summary now runs automatically, correctly
+
+
+v0.8 (April 7, 2010)
+* added cluster automation
+* improved logging and logging aggregation
+
+
+v0.7.7 (March 26, 2010)
+* refactored internals extensively
+* ave-err plots no longer require stimulus info, are always
+    produced (like alldata plots)
+* trackdata.getsuggesteddt() now falls back to naive dt for
+    multiple stimuli, until multiple stimuli cases are worked
+    out
+
+
+v0.7.6 (March 23, 2010)
+* added morpwidth, crabspeed, dirS, orientation, speed085 variables
+* fixed bug: no more absolute paths in process0seq.py
+* angle calculation partially implemented but disabled
+
+
+v0.7.5 (March 3, 2010):
+* new filename, folder organization scheme
+* report1a includes ntracks and npoints in each window
+* pulsed stimulus supported:
+** uses naive dt estimate
+** updated stats/line fits
+** updated our 5 plots
+* adjusted plot appearance (grid, ticks, stimulus indication on plot)
+* tabular output for single and pulsed stimulus
+
+
+
+v0.7.1, .2:
+* automation!  factored all current processing into tasks that
+    can be run in a single script per "stem"
+
+
+v0.7:
+* moved more routines/constants into this file to support
+    bulk processing
+* adjusted plotbinnedaverage() routine
+* refactored time interval calculation so both stats and
+    plots could access it
+* last version before put into subversion
+
+
+v0.6:
+* add defaults to some methods of data object, specifically,
+    will guess dt, create time vector, do resampling on its own
+* begin reports
+* add "plot all the data as dots"
+* added headers to report1a, 1lf
+* added some more stats output for Marta
+
+
+v0.5:
+* find windowed average over raw (not-interpolated) data
+* extract duration from filename
+* linear regressions over raw data in given window
+    (numpy.polyfit(x, y, 1)
+* plot random selection of raw data (as points)
+
+
+v0.4:
+* new column layout
+* add "find pre-stim ave" function to trackdata
+* plot "binned" average
+
+v0.3:
+* write some functions to do specific plots
+* parse the filename (a little)
+* fix so we handle the "NaN" that are already in the data 
+    (compared to the ones I insert to represent missing values)
+* add saving figs
+
+
+v0.2:
+* use a class to hold data
+* do sample test plots
+
+
+v0.1:
+* initial (incomplete) translation from prototype scripts 
+
